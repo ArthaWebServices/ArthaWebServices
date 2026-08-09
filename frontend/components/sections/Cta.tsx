@@ -33,13 +33,7 @@ export function Cta() {
             <Button href="/start-a-project" size="lg">
               <Mail className="h-4 w-4" /> Start a project
             </Button>
-            <Button href="#pricing" size="lg" variant="outline">
-              <Calendar className="h-4 w-4" />
-            </Button>
           </div>
-          <p className="mt-6 flex items-center justify-center gap-1.5 text-sm text-ink/50 dark:text-ink-100/50">
-            Free discovery call · No obligation <ArrowRight className="h-4 w-4" aria-hidden />
-          </p>
         </Reveal>
       </div>
     </section>
