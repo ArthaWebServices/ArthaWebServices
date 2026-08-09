@@ -1,0 +1,25 @@
+import { Hero } from "@/components/sections/Hero";
+import { LogoCloud } from "@/components/sections/LogoCloud";
+import { Services } from "@/components/sections/Services";
+import { Work } from "@/components/sections/Work";
+import { Process } from "@/components/sections/Process";
+import { Team } from "@/components/sections/Team";
+import { Testimonials } from "@/components/sections/Testimonials";
+import { Faq } from "@/components/sections/Faq";
+import { Cta } from "@/components/sections/Cta";
+
+export default function HomePage() {
+  return (
+    <>
+      <Hero />
+      <LogoCloud />
+      <Services />
+      <Work />
+      <Process />
+      <Team />
+      <Testimonials />
+      <Faq />
+      <Cta />
+    </>
+  );
+}
