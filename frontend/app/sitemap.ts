@@ -1,10 +1,16 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/site";
+import { posts } from "@/data/posts";
 
-// App Router sitemap route. next-sitemap (postbuild) also generates one from config;
-// this route keeps it equally available in dev and via the /sitemap.xml path.
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
+
+  const blogRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
+    url: `${siteConfig.url}/blog/${post.slug}`,
+    lastModified: new Date(post.publishedAt),
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
 
   return [
     {
@@ -13,5 +19,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1,
     },
+    {
+      url: `${siteConfig.url}/blog`,
+      lastModified,
+      changeFrequency: "daily",
+      priority: 0.9,
+    },
+    ...blogRoutes,
   ];
 }

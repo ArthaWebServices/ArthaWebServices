@@ -28,12 +28,21 @@ export const siteConfig = {
     github: "",
     dribbble: "",
   },
+  founder: {
+    name: "Aman Thakur",
+    role: "Founder & Lead Engineer",
+    sameAs: [
+      "https://github.com/amant-coder",
+      "https://linkedin.com/in/aman-thakur",
+    ],
+  },
   nav: [
-    { label: "Services", href: "#services" },
-    { label: "Work", href: "#work" },
-    { label: "Process", href: "#process" },
-    { label: "Team", href: "#team" },
-    { label: "FAQ", href: "#faq" },
+    { label: "Services", href: "/#services" },
+    { label: "Work", href: "/#work" },
+    { label: "Process", href: "/#process" },
+    { label: "Team", href: "/#team" },
+    { label: "Blog", href: "/blog" },
+    { label: "FAQ", href: "/#faq" },
   ],
 } as const;
 

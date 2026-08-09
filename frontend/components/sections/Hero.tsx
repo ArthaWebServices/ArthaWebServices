@@ -41,6 +41,12 @@ export function Hero() {
       addressRegion: "NY",
       addressCountry: "US",
     },
+    founder: {
+      "@type": "Person",
+      name: siteConfig.founder.name,
+      jobTitle: siteConfig.founder.role,
+      sameAs: siteConfig.founder.sameAs,
+    },
     areaServed: "Worldwide",
     hasOfferCatalog: {
       "@type": "OfferCatalog",
