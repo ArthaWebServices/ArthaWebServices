@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "not-found";
+import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar, Clock, Sparkles } from "lucide-react";
 import { posts } from "@/data/posts";
 import { siteConfig } from "@/lib/site";
