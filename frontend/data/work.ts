@@ -10,14 +10,14 @@ export interface WorkProject {
 
 export const projects: WorkProject[] = [
   {
-    title: "Northwind Analytics",
-    category: "SaaS Platform",
+    title: "College Announcement Portal",
+    category: "Full-Stack Education Platform",
     description:
-      "A data-heavy analytics dashboard redesigned for clarity and speed, lifting activation by 32%.",
-    image: "/work-northwind.svg",
-    alt: "Northwind Analytics dashboard interface preview",
-    tags: ["UI/UX", "Next.js", "Dashboard"],
-    link: "#",
+      "A multi-tier announcement system for Ghanshyamdas Saraf College, enabling HODs to publish announcements to their departments with real-time push notifications to students. Public feed allows anyone to browse/filter by course, year, type, and date with no authentication required.",
+    image: "/Aportal.png",
+    alt: "College Announcement Portal interface preview",
+    tags: ["React", "Node.js", "MongoDB", "Clerk Auth", "Push Notifications", "Express", "Tailwind CSS"],
+    link: "Announcement-port.vercel.app",
   },
   {
     title: "Atlas Footwear",

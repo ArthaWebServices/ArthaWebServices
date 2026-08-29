@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: `${siteConfig.name} — ${siteConfig.tagline}`,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: "@youragency",
+    creator: "@arthawebservices",
   },
   robots: {
     index: true,

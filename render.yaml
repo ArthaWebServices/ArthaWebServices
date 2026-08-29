@@ -1,0 +1,37 @@
+# Render deployment config for L_page
+# https://docs.render.com/yaml-reference/
+
+services:
+  # --- Backend API (Hono) ---
+  # Free-tier web services sleep after ~15 min of inactivity; the cron
+  # service below pings /health every 5 min to keep this one awake.
+  - type: web
+    name: l-page-api
+    env: node
+    region: oregon
+    plan: free
+    rootDir: backend
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: "4000"
+      # Optional: Telegram notifications for new project leads
+      - key: TELEGRAM_BOT_TOKEN
+        value: ""
+      - key: TELEGRAM_CHAT_ID
+        value: ""
+
+  # --- Periodic ping to keep the free web service awake ---
+  - type: cron
+    name: l-page-health-ping
+    env: node
+    region: oregon
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    schedule: "*/5 * * * *"
+    startCommand: node -e "fetch(process.env.HEALTH_URL + '/health').then(r => r.json()).then(j => console.log('health ping:', JSON.stringify(j))).catch(e => { console.error('health ping failed:', e); process.exit(1); })"
+    envVars:
+      - key: HEALTH_URL
+        value: "https://arthawebservices.onrender.com"

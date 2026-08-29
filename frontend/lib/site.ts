@@ -4,7 +4,7 @@ export const siteConfig = {
   tagline: "Custom web design & development",
   description:
     "Artha Web Services is a full-service web agency crafting high-converting, custom-designed websites — strategy, design, and development under one roof.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://artha-web-services.vercel.app/",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.arthawebservices.dev",
   ogImage: "/og-image.svg",
   locale: "en_US",
   keywords: [
@@ -17,7 +17,7 @@ export const siteConfig = {
     "conversion optimization",
   ],
   contact: {
-    email: "hello@aman-devop.me",
+    email: "contact@arthawebservices.dev",
     phone: "",
     address: "",
   },

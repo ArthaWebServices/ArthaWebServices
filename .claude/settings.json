@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell -Command \"Get-Process -Id 11084 -ErrorAction SilentlyContinue | Select-Object Id,ProcessName,StartTime,WorkingSet; Get-Process -Id 3484 -ErrorAction SilentlyContinue | Select-Object Id,ProcessName,StartTime\")"
+    ]
+  }
+}
