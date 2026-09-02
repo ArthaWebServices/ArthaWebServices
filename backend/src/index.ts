@@ -71,12 +71,14 @@ const ProjectSubmissionSchema = z.object({
     message: "Project description must be at least 25 characters",
   }),
   googleDocs: z.string().trim().optional().or(z.literal(""))
-    .refine((value) => value === "" || /^https?:\/\//i.test(value), {
+    .transform((value) => value ?? "")
+    .refine((value) => value === "" || /^https?:\/\//i.test(value ?? ""), {
       message: "Google Docs link must be a valid URL",
     })
     .default(""),
   dropbox: z.string().trim().optional().or(z.literal(""))
-    .refine((value) => value === "" || /^https?:\/\//i.test(value), {
+    .transform((value) => value ?? "")
+    .refine((value) => value === "" || /^https?:\/\//i.test(value ?? ""), {
       message: "Dropbox link must be a valid URL",
     })
     .default(""),
