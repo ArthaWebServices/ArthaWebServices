@@ -83,6 +83,10 @@ export function ProjectForm() {
       const data: ProjectFormApiResponse = await res.json();
       if (!res.ok || !data.ok) {
         setStatus("error");
+        if (res.status === 429) {
+          setError("Too many attempts. Please wait a minute and try again.");
+          return;
+        }
         setError(data.message ?? "Something went wrong. Please try again.");
         return;
       }

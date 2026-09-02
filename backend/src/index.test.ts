@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeAll, afterAll } from "vitest";
+import { describe, it, expect, beforeAll, afterAll, beforeEach } from "vitest";
 import { serve } from "@hono/node-server";
 import { Hono, Context } from "hono";
 import { cors } from "hono/cors";
@@ -30,17 +30,36 @@ const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
 const MAX_FILES = 5;
 const MAX_FIELD_LENGTH = 10000;
 const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
-const RATE_LIMIT_MAX_REQUESTS = 10;
+const RATE_LIMIT_MAX_REQUESTS = 5;
 
 // Validation schemas
 const ProjectSubmissionSchema = z.object({
-  name: z.string().min(1).max(100).trim(),
-  email: z.string().email().max(255),
-  phone: z.string().max(20).optional().default(""),
-  company: z.string().max(100).optional().default(""),
-  description: z.string().min(10).max(MAX_FIELD_LENGTH).trim(),
-  googleDocs: z.string().url().optional().or(z.literal("")).default(""),
-  dropbox: z.string().url().optional().or(z.literal("")).default(""),
+  name: z.string().trim().min(2).max(100).refine((value) => !/^\s*$/.test(value), {
+    message: "Name is required",
+  }),
+  email: z.string().trim().email().max(255),
+  phone: z.string().trim().max(20).optional().or(z.literal(""))
+    .transform((value) => value ?? "")
+    .refine((value) => value === "" || /^[+()\d\s-]{7,20}$/.test(value), {
+      message: "Phone number is invalid",
+    })
+    .default(""),
+  company: z.string().trim().max(100).optional().or(z.literal(""))
+    .transform((value) => value ?? "")
+    .default(""),
+  description: z.string().trim().min(25).max(MAX_FIELD_LENGTH).refine((value) => !/^\s*$/.test(value), {
+    message: "Project description must be at least 25 characters",
+  }),
+  googleDocs: z.string().trim().optional().or(z.literal(""))
+    .refine((value) => value === "" || /^https?:\/\//i.test(value), {
+      message: "Google Docs link must be a valid URL",
+    })
+    .default(""),
+  dropbox: z.string().trim().optional().or(z.literal(""))
+    .refine((value) => value === "" || /^https?:\/\//i.test(value), {
+      message: "Dropbox link must be a valid URL",
+    })
+    .default(""),
 });
 
 // Utility functions
@@ -83,6 +102,10 @@ const validProjectData = {
   company: "Acme Corp",
   description: "We need a web application to manage our projects and team collaboration.",
 };
+
+beforeEach(() => {
+  rateLimitStore.clear();
+});
 
 // Setup and teardown
 beforeAll(async () => {
@@ -300,9 +323,13 @@ afterAll(async () => {
   }
 });
 
+let testIpCounter = 0;
+
 // Helper to create a unique IP for each test group
 function getTestIp(groupName: string): string {
-  return `192.168.1.${groupName.charCodeAt(0) % 255}`;
+  const index = testIpCounter % 200;
+  testIpCounter += 1;
+  return `192.168.1.${10 + index}`;
 }
 
 describe("API Security Tests", () => {
@@ -584,8 +611,8 @@ describe("API Security Tests", () => {
 
       const testIp = "10.0.0.1"; // Use unique IP to avoid collisions
 
-      // Make 10 requests (should all succeed)
-      for (let i = 0; i < 10; i++) {
+      // Make 5 requests (should all succeed)
+      for (let i = 0; i < 5; i++) {
         const res = await fetch(`${BASE_URL}/api/project`, {
           method: "POST",
           headers: { "X-Forwarded-For": testIp },
@@ -603,15 +630,15 @@ describe("API Security Tests", () => {
 
       const testIp = "10.0.0.2"; // Use different unique IP
 
-      // Make 11 requests (11th should be rate limited)
-      for (let i = 0; i < 11; i++) {
+      // Make 6 requests (6th should be rate limited)
+      for (let i = 0; i < 6; i++) {
         const res = await fetch(`${BASE_URL}/api/project`, {
           method: "POST",
           headers: { "X-Forwarded-For": testIp },
           body: formData,
         });
 
-        if (i < 10) {
+        if (i < 5) {
           expect(res.status).toBe(200);
         } else {
           expect(res.status).toBe(429);
