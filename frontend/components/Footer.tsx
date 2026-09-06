@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { Logo } from "@/components/Logo";
 import { siteConfig } from "@/lib/site";
 
 const serviceLinks = [
@@ -28,10 +29,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             <a href="#" className="flex items-center gap-2 font-bold tracking-tight">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-600 text-white">
-                {siteConfig.name.charAt(0)}
-              </span>
-              <span className="text-lg">{siteConfig.name}</span>
+              <Logo variant="dark" size="md" />
             </a>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">
               {siteConfig.tagline}. Strategy, design, and development under one roof — built to convert.
@@ -112,8 +110,8 @@ export function Footer() {
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs text-white/40 sm:flex-row">
           <p>© {year} {siteConfig.legalName}. All rights reserved.</p>
           <div className="flex items-center gap-4">
-            <a href="#" className="transition-colors hover:text-white">Privacy Policy</a>
-            <a href="#" className="transition-colors hover:text-white">Terms</a>
+            <a href="/privacy-policy" className="transition-colors hover:text-white">Privacy Policy</a>
+            <a href="/terms" className="transition-colors hover:text-white">Terms</a>
           </div>
         </div>
       </div>

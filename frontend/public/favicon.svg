@@ -1,4 +1,139 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#6d4dff"/>
-  <text x="32" y="44" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="bold" fill="#ffffff" text-anchor="middle">A</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <!-- Outer rim: a brushed metal feel via a diagonal light-to-dark sweep -->
+    <linearGradient id="ringOuter" x1="0.15" y1="0.1" x2="0.85" y2="0.95">
+      <stop offset="0%"   stop-color="#F0E2FF"/>
+      <stop offset="22%"  stop-color="#C9B0FF"/>
+      <stop offset="50%"  stop-color="#8A6BE8"/>
+      <stop offset="78%"  stop-color="#4A2BB8"/>
+      <stop offset="100%" stop-color="#1B0A4A"/>
+    </linearGradient>
+
+    <!-- Bevel band: the polished inner highlight that gives the rim depth -->
+    <linearGradient id="ringBevel" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%"   stop-color="#FFFFFF" stop-opacity="0.55"/>
+      <stop offset="50%"  stop-color="#B89BFF" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#1B0A4A" stop-opacity="0.6"/>
+    </linearGradient>
+
+    <!-- Recess: a thin dark groove between the bevel and the badge -->
+    <radialGradient id="recess" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#000000" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#1B0A4A"/>
+    </radialGradient>
+
+    <!-- Badge interior: deep violet with a soft top-center hotspot -->
+    <radialGradient id="badge" cx="50%" cy="32%" r="72%">
+      <stop offset="0%"   stop-color="#3F1F8A"/>
+      <stop offset="45%"  stop-color="#1F0F4A"/>
+      <stop offset="100%" stop-color="#08031A"/>
+    </radialGradient>
+
+    <!-- A left face: light lavender catching the upper light -->
+    <linearGradient id="aLeft" x1="0.25" y1="0" x2="0.55" y2="1">
+      <stop offset="0%"   stop-color="#E2D0FF"/>
+      <stop offset="55%"  stop-color="#A98AE8"/>
+      <stop offset="100%" stop-color="#5A3FCC"/>
+    </linearGradient>
+
+    <!-- A right face: deeper violet, the shadow side -->
+    <linearGradient id="aRight" x1="0.4" y1="0" x2="0.8" y2="1">
+      <stop offset="0%"   stop-color="#7B5BFF"/>
+      <stop offset="55%"  stop-color="#3F1F8A"/>
+      <stop offset="100%" stop-color="#15063A"/>
+    </linearGradient>
+
+    <!-- Ribbon highlight: the bright band running along the swoop -->
+    <linearGradient id="ribbonHi" x1="0" y1="0" x2="1" y2="0.35">
+      <stop offset="0%"   stop-color="#F0E2FF"/>
+      <stop offset="50%"  stop-color="#BFA8FF"/>
+      <stop offset="100%" stop-color="#6B4FCC"/>
+    </linearGradient>
+
+    <!-- Ribbon shadow: the underside of the same swoop, giving it volume -->
+    <linearGradient id="ribbonLo" x1="0" y1="0" x2="1" y2="0.5">
+      <stop offset="0%"   stop-color="#4A2BB8"/>
+      <stop offset="100%" stop-color="#15063A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ============================================
+       1.  METALLIC RING (4 stacked circles)
+       ============================================ -->
+  <circle cx="32" cy="32" r="32" fill="url(#ringOuter)"/>
+  <circle cx="32" cy="32" r="29.5" fill="url(#ringBevel)"/>
+  <circle cx="32" cy="32" r="27.5" fill="url(#recess)"/>
+  <circle cx="32" cy="32" r="25.5" fill="url(#badge)"/>
+
+  <!-- A hairline edge on the badge so it doesn't blend into the recess -->
+  <circle cx="32" cy="32" r="25.5" fill="none"
+          stroke="#A98AE8" stroke-opacity="0.18" stroke-width="0.4"/>
+
+  <!-- ============================================
+       2.  A — back stroke (the darker right leg)
+       Drawn first so the ribbon can weave over it.
+       ============================================ -->
+  <path d="M 33 12
+           L 51 51
+           L 44.5 51
+           L 40.5 42
+           L 32 42 Z"
+        fill="url(#aRight)"/>
+
+  <!-- ============================================
+       3.  RIBBON — back loop (behind the A)
+       The receding tail of the swoop, slightly darker.
+       ============================================ -->
+  <path d="M 6 46
+           C 16 42, 24 40, 30 40
+           C 38 40, 48 32, 58 22
+           L 58 27
+           C 48 38, 38 46, 30 46
+           C 24 46, 16 48, 6 51 Z"
+        fill="url(#ribbonLo)"/>
+
+  <!-- ============================================
+       4.  A — front stroke (the lighter left leg)
+       Covers the back ribbon at the crossing.
+       ============================================ -->
+  <path d="M 31 12
+           L 13 51
+           L 19.5 51
+           L 23.5 42
+           L 32 42 Z"
+        fill="url(#aLeft)"/>
+
+  <!-- A — apex cap, joins the two strokes into a single shape -->
+  <path d="M 28 12
+           L 36 12
+           L 32 21 Z"
+        fill="url(#aLeft)"/>
+
+  <!-- ============================================
+       5.  RIBBON — front swoop (in front of the A)
+       The bright, defining curve of the whole mark.
+       ============================================ -->
+  <path d="M 6 41
+           C 16 37, 24 33, 31 33
+           C 39 33, 48 28, 58 17
+           L 58 22
+           C 48 33, 39 38, 31 38
+           C 24 38, 16 42, 6 45 Z"
+        fill="url(#ribbonHi)"/>
+
+  <!-- A razor-thin highlight along the very top of the ribbon, to feel glossy -->
+  <path d="M 10 40
+           C 18 36, 26 33, 32 33
+           C 40 33, 48 28, 56 19"
+        fill="none"
+        stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="0.35"
+        stroke-linecap="round"/>
+
+  <!-- ============================================
+       6.  A — inner cutout (negative space below crossbar)
+       ============================================ -->
+  <path d="M 32 23
+           L 37 35
+           L 27 35 Z"
+        fill="url(#badge)"/>
 </svg>

@@ -14,7 +14,7 @@ export const projects: WorkProject[] = [
     category: "Full-Stack Education Platform",
     description:
       "A multi-tier announcement system for Ghanshyamdas Saraf College, enabling HODs to publish announcements to their departments with real-time push notifications to students. Public feed allows anyone to browse/filter by course, year, type, and date with no authentication required.",
-    image: "/Aportal.png",
+    image: "/Aportal.webp",
     alt: "College Announcement Portal interface preview",
     tags: ["React", "Node.js", "MongoDB", "Clerk Auth", "Push Notifications", "Express", "Tailwind CSS"],
     link: "Announcement-port.vercel.app",

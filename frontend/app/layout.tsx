@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { analytics, siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import "./globals.css";
@@ -15,6 +16,8 @@ const fontSans = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
+  applicationName: siteConfig.name,
+  category: "Web Design & Development",
   title: {
     default: `${siteConfig.name} — ${siteConfig.tagline}`,
     template: `%s | ${siteConfig.name}`,
@@ -61,11 +64,12 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.svg",
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
   },
   verification: {
-    // Populate once you have a Google Search Console token.
-    // google: "your-verification-token",
+    google: "9010xeDBvQiSUC9idfADiYZEUZ2ALfqW7SbwxLt_7E4",
   },
 };
 
@@ -84,6 +88,7 @@ export default function RootLayout({
         <Navbar />
         <main id="main">{children}</main>
         <Footer />
+        <WhatsAppButton />
 
         {/* GA4 — loads only when NEXT_PUBLIC_GA_ID is set */}
         {analytics.gaId ? (

@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/Button";
+import { Logo } from "./Logo";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -44,10 +45,7 @@ export function Navbar() {
           className="group flex items-center gap-2 font-bold tracking-tight"
           aria-label={`${siteConfig.name} home`}
         >
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-600 text-white shadow-lg shadow-brand-600/30 transition-transform group-hover:rotate-6">
-            {siteConfig.name.charAt(0)}
-          </span>
-          <span className="hidden text-lg sm:inline">{siteConfig.name}</span>
+          <Logo variant="light" size="xl" className="transition-transform group-hover:scale-[1.02]" />
         </a>
 
         {/* Desktop nav */}

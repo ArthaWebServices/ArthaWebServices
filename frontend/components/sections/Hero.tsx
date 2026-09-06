@@ -125,7 +125,7 @@ export function Hero() {
             className="mx-auto mt-12 grid max-w-xl grid-cols-3 gap-6 border-t border-ink/10 pt-8 dark:border-white/10"
           >
             {[
-              ["120+", "projects shipped"],
+              ["20+", "projects shipped"],
               ["19ms", "median TTFB"],
               ["98", "avg. Lighthouse"],
             ].map(([stat, label]) => (

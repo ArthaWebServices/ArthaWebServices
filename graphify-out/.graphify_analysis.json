@@ -1,0 +1,494 @@
+{
+  "communities": {
+    "0": [
+      "frontend_app_blog_page",
+      "frontend_app_blog_page_blogindexpage",
+      "frontend_app_blog_page_metadata",
+      "frontend_app_blog_slug_page",
+      "frontend_app_blog_slug_page_blogpostpage",
+      "frontend_app_blog_slug_page_generatemetadata",
+      "frontend_app_blog_slug_page_generatestaticparams",
+      "frontend_app_blog_slug_page_postpageprops",
+      "frontend_app_layout",
+      "frontend_app_layout_fontsans",
+      "frontend_app_layout_metadata",
+      "frontend_app_layout_rootlayout",
+      "frontend_app_privacy_policy_page",
+      "frontend_app_privacy_policy_page_metadata",
+      "frontend_app_privacy_policy_page_privacypolicypage",
+      "frontend_app_robots",
+      "frontend_app_robots_robots",
+      "frontend_app_sitemap",
+      "frontend_app_sitemap_sitemap",
+      "frontend_app_terms_page",
+      "frontend_app_terms_page_metadata",
+      "frontend_app_terms_page_termspage",
+      "frontend_components_footer",
+      "frontend_components_footer_companylinks",
+      "frontend_components_footer_footer",
+      "frontend_components_footer_servicelinks",
+      "frontend_components_logo",
+      "frontend_components_logo_logo",
+      "frontend_components_logo_logosize",
+      "frontend_components_logo_logovariant",
+      "frontend_components_logo_marksizeclasses",
+      "frontend_components_logo_sizeclasses",
+      "frontend_components_logo_variantsrc",
+      "frontend_components_navbar",
+      "frontend_components_navbar_navbar",
+      "frontend_components_sections_hero",
+      "frontend_components_sections_hero_container",
+      "frontend_components_sections_hero_hero",
+      "frontend_components_sections_hero_item",
+      "frontend_components_seo_jsonld",
+      "frontend_components_seo_jsonld_jsonld",
+      "frontend_components_seo_jsonld_jsonldprops",
+      "frontend_components_ui_button",
+      "frontend_components_ui_button_buttonprops",
+      "frontend_components_ui_button_size",
+      "frontend_components_ui_button_sizes",
+      "frontend_components_ui_button_variant",
+      "frontend_components_ui_button_variants",
+      "frontend_data_posts",
+      "frontend_data_posts_blogpost",
+      "frontend_data_posts_posts",
+      "frontend_lib_site",
+      "frontend_lib_site_absoluteurl",
+      "frontend_lib_site_analytics",
+      "frontend_lib_site_siteconfig",
+      "ref_next"
+    ],
+    "1": [
+      "frontend_app_page",
+      "frontend_app_page_homepage",
+      "frontend_components_sections_cta",
+      "frontend_components_sections_cta_cta",
+      "frontend_components_sections_pricing",
+      "frontend_components_sections_pricing_pricing",
+      "frontend_components_sections_process",
+      "frontend_components_sections_process_process",
+      "frontend_components_sections_proofband",
+      "frontend_components_sections_proofband_outcomes",
+      "frontend_components_sections_proofband_proofband",
+      "frontend_components_sections_services",
+      "frontend_components_sections_services_services",
+      "frontend_components_sections_team",
+      "frontend_components_sections_team_avatartints",
+      "frontend_components_sections_team_team",
+      "frontend_components_sections_testimonials",
+      "frontend_components_sections_testimonials_stars",
+      "frontend_components_sections_testimonials_testimonials",
+      "frontend_components_sections_work",
+      "frontend_components_sections_work_work",
+      "frontend_components_ui_button_button",
+      "frontend_components_ui_reveal",
+      "frontend_components_ui_reveal_direction",
+      "frontend_components_ui_reveal_motiontags",
+      "frontend_components_ui_reveal_offsets",
+      "frontend_components_ui_reveal_reveal",
+      "frontend_components_ui_reveal_revealprops",
+      "frontend_components_ui_section",
+      "frontend_components_ui_section_section",
+      "frontend_components_ui_section_sectionheader",
+      "frontend_components_ui_section_sectionheaderprops",
+      "frontend_components_ui_section_sectionprops",
+      "frontend_data_pricing",
+      "frontend_data_pricing_pricing",
+      "frontend_data_pricing_pricingtier",
+      "frontend_data_process",
+      "frontend_data_process_process",
+      "frontend_data_process_processstep",
+      "frontend_data_services",
+      "frontend_data_services_service",
+      "frontend_data_services_services",
+      "frontend_data_team",
+      "frontend_data_team_team",
+      "frontend_data_team_teammember",
+      "frontend_data_testimonials",
+      "frontend_data_testimonials_testimonial",
+      "frontend_data_testimonials_testimonials",
+      "frontend_data_work",
+      "frontend_data_work_projects",
+      "frontend_data_work_workproject",
+      "frontend_lib_utils",
+      "frontend_lib_utils_cn",
+      "ref_lucide_react"
+    ],
+    "2": [
+      "backend_package",
+      "backend_package_devdependencies",
+      "backend_package_devdependencies_types_node",
+      "backend_package_devdependencies_typescript",
+      "backend_package_devdependencies_vitest",
+      "backend_package_devdependencies_vitest_ui",
+      "backend_package_json_ref_types_node",
+      "backend_package_json_ref_typescript",
+      "backend_package_name",
+      "backend_package_private",
+      "backend_package_type",
+      "backend_package_version",
+      "backend_src_index",
+      "backend_src_index_app",
+      "backend_src_index_appcontext",
+      "backend_src_index_checkratelimit",
+      "backend_src_index_escapehtml",
+      "backend_src_index_port",
+      "backend_src_index_projectsubmissionschema",
+      "backend_src_index_ratelimitstore",
+      "backend_src_index_sanitizestring",
+      "backend_src_index_test",
+      "backend_src_index_test_appcontext",
+      "backend_src_index_test_checkratelimit",
+      "backend_src_index_test_escapehtml",
+      "backend_src_index_test_gettestip",
+      "backend_src_index_test_projectsubmissionschema",
+      "backend_src_index_test_ratelimitstore",
+      "backend_src_index_test_validprojectdata",
+      "ref_hono",
+      "ref_hono_node_server",
+      "ref_tsx",
+      "ref_uuid",
+      "ref_vitest",
+      "ref_vitest_ui",
+      "ref_zod"
+    ],
+    "3": [
+      "frontend_package",
+      "frontend_package_dependencies",
+      "frontend_package_dependencies_clsx",
+      "frontend_package_dependencies_framer_motion",
+      "frontend_package_dependencies_lucide_react",
+      "frontend_package_dependencies_next",
+      "frontend_package_dependencies_react",
+      "frontend_package_dependencies_react_dom",
+      "frontend_package_dependencies_tailwind_merge",
+      "frontend_package_name",
+      "frontend_package_private",
+      "frontend_package_scripts",
+      "frontend_package_scripts_build",
+      "frontend_package_scripts_dev",
+      "frontend_package_scripts_lint",
+      "frontend_package_scripts_postbuild",
+      "frontend_package_scripts_start",
+      "frontend_package_scripts_typecheck",
+      "frontend_package_version",
+      "frontend_tailwind_config",
+      "frontend_tailwind_config_config",
+      "ref_autoprefixer",
+      "ref_clsx",
+      "ref_eslint",
+      "ref_eslint_config_next",
+      "ref_next_sitemap",
+      "ref_postcss",
+      "ref_react_dom",
+      "ref_tailwind_merge",
+      "ref_tailwindcss",
+      "ref_types_react",
+      "ref_types_react_dom"
+    ],
+    "4": [
+      "frontend_tsconfig",
+      "frontend_tsconfig_compileroptions",
+      "frontend_tsconfig_compileroptions_allowjs",
+      "frontend_tsconfig_compileroptions_esmoduleinterop",
+      "frontend_tsconfig_compileroptions_forceconsistentcasinginfilenames",
+      "frontend_tsconfig_compileroptions_incremental",
+      "frontend_tsconfig_compileroptions_isolatedmodules",
+      "frontend_tsconfig_compileroptions_jsx",
+      "frontend_tsconfig_compileroptions_lib",
+      "frontend_tsconfig_compileroptions_module",
+      "frontend_tsconfig_compileroptions_moduleresolution",
+      "frontend_tsconfig_compileroptions_noemit",
+      "frontend_tsconfig_compileroptions_nouncheckedindexedaccess",
+      "frontend_tsconfig_compileroptions_paths",
+      "frontend_tsconfig_compileroptions_plugins",
+      "frontend_tsconfig_compileroptions_resolvejsonmodule",
+      "frontend_tsconfig_compileroptions_skiplibcheck",
+      "frontend_tsconfig_compileroptions_strict",
+      "frontend_tsconfig_compileroptions_target",
+      "frontend_tsconfig_exclude",
+      "frontend_tsconfig_include"
+    ],
+    "5": [
+      "frontend_app_start_a_project_page",
+      "frontend_app_start_a_project_page_metadata",
+      "frontend_app_start_a_project_page_startprojectpage",
+      "frontend_components_projectform",
+      "frontend_components_projectform_projectform",
+      "frontend_components_projectform_projectformapiresponse",
+      "frontend_components_projectform_status",
+      "frontend_components_sections_techstack",
+      "frontend_components_sections_techstack_techstack",
+      "frontend_data_tech",
+      "frontend_data_tech_marqueedirection",
+      "frontend_data_tech_techcategories",
+      "frontend_data_tech_techcategory",
+      "ref_react"
+    ],
+    "6": [
+      "package",
+      "package_description",
+      "package_devdependencies",
+      "package_devdependencies_concurrently",
+      "package_name",
+      "package_private",
+      "package_scripts",
+      "package_scripts_build",
+      "package_scripts_dev",
+      "package_scripts_dev_backend",
+      "package_scripts_dev_frontend",
+      "package_scripts_typecheck",
+      "package_version",
+      "ref_concurrently"
+    ],
+    "7": [
+      "backend_tsconfig",
+      "backend_tsconfig_compileroptions",
+      "backend_tsconfig_compileroptions_esmoduleinterop",
+      "backend_tsconfig_compileroptions_forceconsistentcasinginfilenames",
+      "backend_tsconfig_compileroptions_module",
+      "backend_tsconfig_compileroptions_moduleresolution",
+      "backend_tsconfig_compileroptions_outdir",
+      "backend_tsconfig_compileroptions_rootdir",
+      "backend_tsconfig_compileroptions_skiplibcheck",
+      "backend_tsconfig_compileroptions_strict",
+      "backend_tsconfig_compileroptions_target",
+      "backend_tsconfig_compileroptions_types",
+      "backend_tsconfig_include"
+    ],
+    "8": [
+      "frontend_package_devdependencies",
+      "frontend_package_devdependencies_autoprefixer",
+      "frontend_package_devdependencies_eslint",
+      "frontend_package_devdependencies_eslint_config_next",
+      "frontend_package_devdependencies_next_sitemap",
+      "frontend_package_devdependencies_postcss",
+      "frontend_package_devdependencies_tailwindcss",
+      "frontend_package_devdependencies_types_node",
+      "frontend_package_devdependencies_types_react",
+      "frontend_package_devdependencies_types_react_dom",
+      "frontend_package_devdependencies_typescript"
+    ],
+    "9": [
+      "backend_package_scripts",
+      "backend_package_scripts_build",
+      "backend_package_scripts_dev",
+      "backend_package_scripts_start",
+      "backend_package_scripts_test",
+      "backend_package_scripts_test_coverage",
+      "backend_package_scripts_test_ui",
+      "backend_package_scripts_typecheck"
+    ],
+    "10": [
+      "frontend_components_sections_faq",
+      "frontend_components_sections_faq_faq",
+      "frontend_components_sections_faq_faqaccordion",
+      "frontend_data_faq",
+      "frontend_data_faq_faq",
+      "frontend_data_faq_faqitem",
+      "ref_framer_motion"
+    ],
+    "11": [
+      "backend_package_dependencies",
+      "backend_package_dependencies_hono",
+      "backend_package_dependencies_hono_node_server",
+      "backend_package_dependencies_tsx",
+      "backend_package_dependencies_uuid",
+      "backend_package_dependencies_zod"
+    ],
+    "12": [
+      "frontend_next_config",
+      "frontend_next_config_dirname",
+      "frontend_next_config_nextconfig",
+      "next"
+    ],
+    "13": [
+      "frontend_app_api_project_route",
+      "frontend_app_api_project_route_escapehtml",
+      "frontend_app_api_project_route_post"
+    ],
+    "14": [
+      "frontend_eslintrc",
+      "frontend_eslintrc_extends",
+      "ref_next_core_web_vitals"
+    ],
+    "15": [
+      "frontend_postcss_config",
+      "frontend_postcss_config_config",
+      "postcss_load_config"
+    ],
+    "16": [
+      "frontend_next_sitemap_config",
+      "next_sitemap"
+    ],
+    "17": [
+      "backend_vitest_config"
+    ]
+  },
+  "cohesion": {
+    "0": 0.06103896103896104,
+    "1": 0.08385744234800839,
+    "2": 0.06666666666666667,
+    "3": 0.0625,
+    "4": 0.09523809523809523,
+    "5": 0.16483516483516483,
+    "6": 0.14285714285714285,
+    "7": 0.15384615384615385,
+    "8": 0.18181818181818182,
+    "9": 0.25,
+    "10": 0.3333333333333333,
+    "11": 0.3333333333333333,
+    "12": 0.5,
+    "13": 1.0,
+    "14": 0.6666666666666666,
+    "15": 0.6666666666666666,
+    "16": 1.0,
+    "17": 1.0
+  },
+  "gods": [
+    {
+      "id": "frontend_lib_utils_cn",
+      "label": "cn()",
+      "degree": 20
+    },
+    {
+      "id": "frontend_tsconfig_compileroptions",
+      "label": "compilerOptions",
+      "degree": 18
+    },
+    {
+      "id": "ref_lucide_react",
+      "label": "lucide-react",
+      "degree": 16
+    },
+    {
+      "id": "frontend_lib_site_siteconfig",
+      "label": "SiteConfig",
+      "degree": 12
+    },
+    {
+      "id": "backend_tsconfig_compileroptions",
+      "label": "compilerOptions",
+      "degree": 11
+    },
+    {
+      "id": "frontend_components_ui_button_button",
+      "label": "Button()",
+      "degree": 10
+    },
+    {
+      "id": "frontend_components_ui_reveal_reveal",
+      "label": "Reveal()",
+      "degree": 10
+    },
+    {
+      "id": "frontend_components_ui_section_section",
+      "label": "Section()",
+      "degree": 9
+    },
+    {
+      "id": "frontend_components_ui_section_sectionheader",
+      "label": "SectionHeader()",
+      "degree": 9
+    },
+    {
+      "id": "ref_next",
+      "label": "next",
+      "degree": 9
+    }
+  ],
+  "surprises": [
+    {
+      "source": "RootLayout()",
+      "target": "cn()",
+      "source_files": [
+        "frontend/app/layout.tsx",
+        "frontend/lib/utils.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities; peripheral node `RootLayout()` unexpectedly reaches hub `cn()`"
+    },
+    {
+      "source": "Logo()",
+      "target": "cn()",
+      "source_files": [
+        "frontend/components/Logo.tsx",
+        "frontend/lib/utils.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "Navbar()",
+      "target": "cn()",
+      "source_files": [
+        "frontend/components/Navbar.tsx",
+        "frontend/lib/utils.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "Pricing()",
+      "target": "cn()",
+      "source_files": [
+        "frontend/components/sections/Pricing.tsx",
+        "frontend/lib/utils.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "peripheral node `Pricing()` unexpectedly reaches hub `cn()`"
+    },
+    {
+      "source": "ProjectForm()",
+      "target": "cn()",
+      "source_files": [
+        "frontend/components/ProjectForm.tsx",
+        "frontend/lib/utils.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `lucide-react` connect `Community 1` to `Community 0`, `Community 10`, `Community 3`, `Community 5`?",
+      "why": "High betweenness centrality (0.166) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `@types/node` connect `Community 2` to `Community 3`?",
+      "why": "High betweenness centrality (0.102) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `typescript` connect `Community 2` to `Community 3`?",
+      "why": "High betweenness centrality (0.102) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `PostPageProps`, `LogoSize`, `LogoVariant` to the rest of the system?",
+      "why": "154 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 0` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.06103896103896104 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 1` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.08385744234800839 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 2` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.06666666666666667 - nodes in this community are weakly interconnected."
+    }
+  ]
+}

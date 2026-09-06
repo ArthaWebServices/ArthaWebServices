@@ -36,18 +36,39 @@ const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
 const MAX_FILES = 5;
 const MAX_FIELD_LENGTH = 10000;
 const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
-const RATE_LIMIT_MAX_REQUESTS = 10;
+const RATE_LIMIT_MAX_REQUESTS = 5;
 // Rate limiting store (simple in-memory; use Redis for production)
 const rateLimitStore = new Map();
 // Validation schemas
 const ProjectSubmissionSchema = z.object({
-    name: z.string().min(1).max(100).trim(),
-    email: z.string().email().max(255),
-    phone: z.string().max(20).optional().default(""),
-    company: z.string().max(100).optional().default(""),
-    description: z.string().min(10).max(MAX_FIELD_LENGTH).trim(),
-    googleDocs: z.string().url().optional().or(z.literal("")).default(""),
-    dropbox: z.string().url().optional().or(z.literal("")).default(""),
+    name: z.string().trim().min(2).max(100).refine((value) => !/^\s*$/.test(value), {
+        message: "Name is required",
+    }),
+    email: z.string().trim().email().max(255),
+    phone: z.string().trim().max(20).optional().or(z.literal(""))
+        .transform((value) => value ?? "")
+        .refine((value) => value === "" || /^[+()\d\s-]{7,20}$/.test(value), {
+        message: "Phone number is invalid",
+    })
+        .default(""),
+    company: z.string().trim().max(100).optional().or(z.literal(""))
+        .transform((value) => value ?? "")
+        .default(""),
+    description: z.string().trim().min(25).max(MAX_FIELD_LENGTH).refine((value) => !/^\s*$/.test(value), {
+        message: "Project description must be at least 25 characters",
+    }),
+    googleDocs: z.string().trim().optional().or(z.literal(""))
+        .transform((value) => value ?? "")
+        .refine((value) => value === "" || /^https?:\/\//i.test(value ?? ""), {
+        message: "Google Docs link must be a valid URL",
+    })
+        .default(""),
+    dropbox: z.string().trim().optional().or(z.literal(""))
+        .transform((value) => value ?? "")
+        .refine((value) => value === "" || /^https?:\/\//i.test(value ?? ""), {
+        message: "Dropbox link must be a valid URL",
+    })
+        .default(""),
 });
 // Utility functions
 const escapeHtml = (str) => str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");

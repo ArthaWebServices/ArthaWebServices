@@ -29,6 +29,9 @@ export function Services() {
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-ink/60 dark:text-ink-100/60">
                   {service.description}
                 </p>
+                <p className="mt-3 rounded-lg border border-ink/10 bg-ink/[0.03] px-3 py-2 text-xs leading-relaxed text-ink/70 dark:border-white/10 dark:bg-white/[0.04] dark:text-ink-100/70">
+                  {service.example}
+                </p>
                 <ul className="mt-5 flex flex-wrap gap-2">
                   {service.features.map((feature) => (
                     <li

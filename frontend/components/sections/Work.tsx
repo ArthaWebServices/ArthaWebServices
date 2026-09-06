@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { ArrowUpRight } from "lucide-react";
+import { Button } from "@/components/ui/Button";
 import { projects } from "@/data/work";
 
 export function Work() {
@@ -12,6 +13,18 @@ export function Work() {
         title="Projects we're proud to ship"
         description="A few of the brands we've helped design, launch, and grow. Real builds, real results."
       />
+      <div className="mb-10 flex flex-col items-start justify-between gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-5 sm:flex-row sm:items-center sm:p-6">
+        <div>
+          <p className="text-sm font-semibold text-white">Want results like these?</p>
+          <p className="mt-1 text-sm text-white/70">
+            Tell us about your project and we&apos;ll reply within one business day with a
+            clear next step.
+          </p>
+        </div>
+        <Button href="/start-a-project" size="md" className="shrink-0">
+          Start a project
+        </Button>
+      </div>
       <div className="grid gap-6 lg:grid-cols-3">
         {projects.map((project, i) => (
           <Reveal key={project.title} delay={0.08 * i} as="article" className="h-full">

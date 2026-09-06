@@ -24,6 +24,14 @@ body {
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
 
+/* Never allow horizontal page scrolling — marquees clip inside their own
+   overflow-hidden viewports and must not widen the document. */
+html,
+body {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
 /* Custom selection */
 ::selection {
   @apply bg-brand-500/20 text-brand-700;
@@ -51,7 +59,7 @@ body {
   }
 
   .section-pad {
-    @apply py-20 sm:py-28 lg:py-32;
+    @apply py-16 sm:py-24 lg:py-32;
   }
 
   .eyebrow {
@@ -79,8 +87,155 @@ body {
   }
 }
 
-/* Marquee pause on hover */
-.marquee-track:hover {
+/* ============================================================
+   Multi-row technology marquee (components/sections/TechStack)
+   ============================================================ */
+
+/* Each row: pinned category label + scrolling viewport.
+   overflow:hidden + max-width:100% keep the track from ever
+   widening the document or creating a horizontal scrollbar. */
+.tech-row {
+  --tech-text: rgb(23 23 35 / 0.55);
+  --tech-text-strong: rgb(23 23 35 / 0.95);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+@media (prefers-color-scheme: dark) {
+  .tech-row {
+    --tech-text: rgb(235 235 245 / 0.55);
+    --tech-text-strong: rgb(255 255 255 / 0.95);
+  }
+}
+
+/* Pinned, non-scrolling category label. */
+.tech-label {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+  gap: 0.55rem;
+  padding: 0.75rem 1.25rem 0.75rem max(1.25rem, env(safe-area-inset-left));
+  white-space: nowrap;
+  color: var(--tech-text);
+}
+
+.tech-label-dot {
+  width: 0.3125rem;
+  height: 0.3125rem;
+  flex: none;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #8a74ff, #5a2ff0);
+  opacity: 0.85;
+}
+
+.tech-label-text {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+/* Scrolling viewport — clips the track, fades the edges. */
+.tech-marquee-viewport {
+  position: relative;
+  flex: 1 1 0%;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  padding-block: 0.75rem;
+}
+
+.tech-marquee-fade {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    black clamp(1rem, 3vw, 2.5rem),
+    black calc(100% - clamp(1rem, 3vw, 2.5rem)),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    black clamp(1rem, 3vw, 2.5rem),
+    black calc(100% - clamp(1rem, 3vw, 2.5rem)),
+    transparent 100%
+  );
+}
+
+/* Track: two identical copies side-by-side, animated by -50% of its own
+   width so the loop is exactly one copy and never visibly jumps. */
+.tech-marquee-track {
+  display: flex;
+  width: max-content;
+  min-width: 0;
+  will-change: transform;
+}
+
+.tech-marquee-track[data-direction="ltr"] {
+  animation: tech-marquee-ltr var(--marquee-duration, 32s) linear infinite;
+}
+
+.tech-marquee-track[data-direction="rtl"] {
+  animation: tech-marquee-rtl var(--marquee-duration, 32s) linear infinite;
+}
+
+@keyframes tech-marquee-ltr {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes tech-marquee-rtl {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Item: generous spacing + a centered dot separator + hover contrast. */
+.tech-item {
+  --tech-item-gap: clamp(2.75rem, 5vw, 4.5rem);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-right: var(--tech-item-gap);
+  white-space: nowrap;
+  font-size: clamp(0.9375rem, 0.875rem + 0.5vw, 1.375rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--tech-text);
+  transition: color 300ms ease;
+}
+
+.tech-item::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 0.25rem;
+  height: 0.25rem;
+  border-radius: 9999px;
+  background: currentColor;
+  opacity: 0.35;
+  transform: translate(calc(-1 * var(--tech-item-gap) / 2), -50%);
+}
+
+.tech-item:hover {
+  color: var(--tech-text-strong);
+}
+
+/* The whole row pauses while hovered so visitors can read / click. */
+.tech-row:hover .tech-marquee-track {
   animation-play-state: paused;
 }
 
@@ -89,7 +244,7 @@ body {
   html {
     scroll-behavior: auto;
   }
-  .marquee-track {
+  .tech-marquee-track[data-direction] {
     animation: none;
   }
 }
