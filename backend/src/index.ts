@@ -67,8 +67,8 @@ const ProjectSubmissionSchema = z.object({
   company: z.string().trim().max(100).optional().or(z.literal(""))
     .transform((value) => value ?? "")
     .default(""),
-  description: z.string().trim().min(25).max(MAX_FIELD_LENGTH).refine((value) => !/^\s*$/.test(value), {
-    message: "Project description must be at least 25 characters",
+  description: z.string().trim().min(10).max(MAX_FIELD_LENGTH).refine((value) => !/^\s*$/.test(value), {
+    message: "Project description must be at least 10 characters",
   }),
   googleDocs: z.string().trim().optional().or(z.literal(""))
     .transform((value) => value ?? "")
